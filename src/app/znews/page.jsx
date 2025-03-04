@@ -33,7 +33,7 @@ export default function ZNewsPage(){
                 <div className="grid place-items-center bg-black w-[35px] h-[152px] rounded-br-[20px] cursor-pointer"
                     onClick={() => setIsOpen(!isOpen)}
                 >
-                    <img src="/images/zig-w-vertical.svg" className="p-2" alt="ZIG W" />
+                    <img src="/images/ZIG-W-VERTICAL.svg" className="p-2" alt="ZIG W" />
                 </div>
                 
                 {/* menus options */}
@@ -49,7 +49,7 @@ export default function ZNewsPage(){
 
                 <div className="flex justify-between items-center gap-8">
                     <div>
-                        <img src="/images/zimo news.svg" className="w-[115px]" alt="ZIMO NEWS" />
+                        <img src="/images/ZIMO NEWS.svg" className="w-[115px]" alt="zimo news" />
                     </div>
                     <div className="text-[11px] uppercase cursor-pointer tracking-widest">Israel/Gaza</div>
                     <div className="text-[11px] uppercase cursor-pointer tracking-widest">Ukraine War</div>
@@ -59,7 +59,7 @@ export default function ZNewsPage(){
                     <div className="text-[11px] uppercase cursor-pointer tracking-widest">Sport</div>
                     <div className="text-[11px] uppercase cursor-pointer tracking-widest">Science & Technology</div>
                     <div>
-                        <img src="/images/uk flag.svg" className="w-[35px]" alt="UK FLAG" />
+                        <img src="/images/UK FLAG.svg" className="w-[35px]" alt="uk-flag" />
                     </div>
                 </div>
 
@@ -76,12 +76,12 @@ export default function ZNewsPage(){
 
                 <div className="flex justify-between mb-20 gap-20">
                     <div className="w-1/2 relative">
-                        <img src="/images/israel-gaza-war.svg" className="w-full" alt="isreal-gaza-war" />
+                        <img src="/images/ISRAEL-GAZA-WAR.svg" className="w-full" alt="isreal-gaza-war" />
                         <p className="absolute bottom-5 right-7 text-xs tracking-widest text-white uppercase">israel/gaza</p>
                     </div>
                     <div className="w-1/2 border-2 border-zinc-300 rounded-[20px] py-3 px-4 pr-15">
                         <div className="flex items-center gap-4">
-                            <img src="/images/news-zig.svg" className="w-[48px]" alt="News-zig" />
+                            <img src="/images/NEWS-ZIG.svg" className="w-[48px]" alt="News-zig" />
                             <p className="uppercase text-md tracking-widest">Most read</p>
                         </div>
                         <p className="uppercase text-[11px] tracking-widest mt-3">UN says 700,000 children displaced in Gaza amid deadly Israeli attacks</p>
@@ -100,7 +100,7 @@ export default function ZNewsPage(){
                 <div className="grid place-items-center bg-black w-[35px] h-[152px] rounded-bl-[20px] cursor-pointer"
                     onClick={() => setIsOpen(!isOpen)}
                 >
-                    <img src="/images/zig-w-vertical.svg" className="p-2" alt="ZIG W" />
+                    <img src="/images/ZIG-W-VERTICAL.svg" className="p-2" alt="ZIG W" />
                 </div>
 
                 {/* menus options */}
