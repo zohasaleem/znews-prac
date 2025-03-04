@@ -5,20 +5,17 @@ import { useState, useEffect, useRef } from "react";
 export default function ZNewsPage(){
 
     const [isOpen, setIsOpen] = useState(false);
-    const ref = useRef(null);
+    const leftMenuRef = useRef(null);
+    const rightMenuRef = useRef(null);
 
     useEffect(() => {
         const handleOutsideClick = (event) => {
-            if(!ref.current?.contains(event.target)){
+            if(leftMenuRef.current && !leftMenuRef.current?.contains(event.target) && rightMenuRef.current && !rightMenuRef.current?.contains(event.target)){
                 setIsOpen(false)
             }
         };
-
         if(isOpen){
             document.addEventListener("mousedown", handleOutsideClick);
-        }
-        else{
-            document.removeEventListener("mousedown", handleOutsideClick);
         }
 
         return() => {
@@ -33,15 +30,28 @@ export default function ZNewsPage(){
                 <div className="grid place-items-center bg-black w-[35px] h-[152px] rounded-br-[20px] cursor-pointer"
                     onClick={() => setIsOpen(!isOpen)}
                 >
-                    <img src="/images/ZIG-W-VERTICAL.svg" className="p-2" alt="ZIG W" />
+                    <img src="/images/ZIG-W-VERTICAL.svg" className="p-2 absolute image-toggle" alt="zig-vertical" />
+                    <img src="/images/NEWS-VERTICAL.svg" className="w-[32px] p-2 absolute image-toggle-reverse" alt="news-vertical" />
                 </div>
                 
                 {/* menus options */}
                 <div
+                    ref={leftMenuRef}
+                    onClick={(e) => e.stopPropagation()}
                     className={`fixed top-0 left-0 h-70 w-45 bg-black text-white rounded-br-[20px] shadow-lg transform ${
                         isOpen ? "block" : "hidden"
                     } transition-transform duration-300 ease-in-out`}
                 >
+                    <ul className="px-2 py-4">
+                        <li className="uppercase text-white cursor-pointer text-2xl tracking-[4]">NEWS</li>
+                        <li className="uppercase text-white cursor-pointer text-[10px] mt-3 tracking-[2]">Europe</li>
+                        <li className="uppercase text-white cursor-pointer text-[10px] mt-3 tracking-[2]">US/Canada</li>
+                        <li className="uppercase text-white cursor-pointer text-[10px] mt-3 tracking-[2]">Middle East</li>
+                        <li className="uppercase text-white cursor-pointer text-[10px] mt-3 tracking-[2]">Africa</li>
+                        <li className="uppercase text-white cursor-pointer text-[10px] mt-3 tracking-[2]">Asia</li>
+                        <li className="uppercase text-white cursor-pointer text-[10px] mt-3 tracking-[2]">Latin America</li>
+                        <li className="uppercase text-white cursor-pointer text-[10px] mt-3 tracking-[2]">Asia Pacific</li>
+                    </ul>
 
                 </div>
             </div>
@@ -81,7 +91,7 @@ export default function ZNewsPage(){
                     </div>
                     <div className="w-1/2 border-2 border-zinc-300 rounded-[20px] py-3 px-4 pr-15">
                         <div className="flex items-center gap-4">
-                            <img src="/images/NEWS-ZIG.svg" className="w-[48px]" alt="News-zig" />
+                            <img src="/images/NEWS-ZIG.svg" className="w-[48px]" alt="news-zig" />
                             <p className="uppercase text-md tracking-widest">Most read</p>
                         </div>
                         <p className="uppercase text-[11px] tracking-widest mt-3">UN says 700,000 children displaced in Gaza amid deadly Israeli attacks</p>
@@ -100,15 +110,28 @@ export default function ZNewsPage(){
                 <div className="grid place-items-center bg-black w-[35px] h-[152px] rounded-bl-[20px] cursor-pointer"
                     onClick={() => setIsOpen(!isOpen)}
                 >
-                    <img src="/images/ZIG-W-VERTICAL.svg" className="p-2" alt="ZIG W" />
+                    <img src="/images/ZIG-W-VERTICAL.svg" className="p-2 absolute image-toggle" alt="zig-vertical" />
+                    <img src="/images/MORE-VERTICAL.svg" className="w-[32px] p-2 absolute image-toggle-reverse" alt="more-vertical" />
                 </div>
 
                 {/* menus options */}
                 <div
+                    ref={rightMenuRef}
+                    onClick={(e) => e.stopPropagation()}
                     className={`fixed top-0 right-0 h-70 w-45 bg-black text-white rounded-bl-[20px] shadow-lg transform ${
                         isOpen ? "block" : "hidden"
                     } transition-transform duration-300 ease-in-out`}
                 >
+                    <ul className="px-2 py-4 text-right">
+                        <li className="uppercase text-white cursor-pointer text-2xl tracking-[4]">MORE</li>
+                        <li className="uppercase text-white cursor-pointer text-[10px] mt-3 tracking-[2]">Climate Crisis</li>
+                        <li className="uppercase text-white cursor-pointer text-[10px] mt-3 tracking-[2]">Opinion</li>
+                        <li className="uppercase text-white cursor-pointer text-[10px] mt-3 tracking-[2]">Coronavirus</li>
+                        <li className="uppercase text-white cursor-pointer text-[10px] mt-3 tracking-[2]">Investigations</li>
+                        <li className="uppercase text-white cursor-pointer text-[10px] mt-3 tracking-[2]">In Pictures</li>
+                        <li className="uppercase text-white cursor-pointer text-[10px] mt-3 tracking-[2]">Interactives</li>
+                        <li className="uppercase text-white cursor-pointer text-[10px] mt-3 tracking-[2]">Podcasts</li>
+                    </ul>
                 </div>
             </div>
         </div>
